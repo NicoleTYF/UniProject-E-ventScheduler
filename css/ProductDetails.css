@@ -1,0 +1,119 @@
+﻿html, body { 
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+/* PAGE CONTENT */
+.container-fluid {
+	color:            black;
+	width:            700px; 
+	margin:           0 auto;  	
+	bottom:           0; 
+	overflow-x:       auto;
+	overflow-y:       scroll;
+	max-height:       450px; 
+	margin-top:       0%; 
+	margin-left:      40%;
+	padding-top:      90px;
+	padding-left:     10px;
+	background-color: white; 
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 13px;
+}
+
+ul {
+	list-style-type:  none;
+}
+
+a {
+	color: brown;
+}
+
+
+/*______________________________________________________________________*/
+/* BACK TO TOP BUTTON */
+#BackToTopBtn {
+	color:            gold;
+	right:            30px;
+	bottom:           20px;
+	border:           none;
+	cursor:           pointer;
+	outline:          none;
+	padding:          15px;
+	z-index:          99;
+	opacity:          0;
+	position:         fixed;
+	font-size:        28px;
+	transition:       all 0.4s;
+	border-radius:    9%;
+	background-color: green; 
+}
+
+#BackToTopBtn.scrolled:hover {
+	opacity: 1;
+}
+
+#BackToTopBtn.scrolled {
+	opacity:    0.8;
+	transition: all 0.4s;
+}
+
+/*______________________________________________________________________*/
+/* COMMENTS */
+.comments {
+	width:            95%;
+	height:           auto;
+	padding:          10px 24px;
+	display:          flex;	
+	font-size:		  12px;	
+	flex-wrap:		  wrap;
+	flex-flow:        column;
+   -webkit-flex-flow: column;	
+	margin-top:		  9px;
+	min-height:       70px;
+	overflow-x:       auto;
+	overflow-y:       auto;
+	max-height:       auto;
+	font-family:      Helvetica;
+	border-radius:    2%;	
+	flex-direction:   row;
+
+	background-color: rgb(242, 242, 242);
+}
+
+.comments article {
+	max-width: 100%;
+}
+
+.event-addtocalendar {
+	display:     inline-flex;
+	font-size:   13px;
+	white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

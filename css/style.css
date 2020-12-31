@@ -1,0 +1,614 @@
+﻿body {
+    top:        	  0;
+	width:  	      1230px;
+	float:      	  center;
+	margin:     	  0 auto;
+	position:   	  absolute;
+    margin-top: 	  0px; 
+	background-color: transparent;
+}
+
+html {
+    float:                center;
+	width:  	          100%;
+	position:             relative;
+	overflow-x:           hidden;
+	overflow-y:           hidden;
+    background-size:      cover;	
+	scroll-behavior:      smooth;
+	background-image:     url("../images/woodBg.png"); /* wood background */
+    background-repeat:    no-repeat;
+    background-position:  center center;
+}
+
+*:focus {
+    outline: none;
+}
+
+/* TEXTS TURNS LIGHT RED WHEN SELECTED */
+::selection {
+    background-color: #f0f0f0;
+}
+
+hr {
+	width:       90%; 
+	color:       #F5313E; 
+	margin-left: 5%;
+}
+
+a {
+	text-decoration: underline;
+}
+
+/*_________________________________________________________*/
+/* TOOLBAR */
+.toolbar {
+    top:          0px;
+    left:         0;
+    width:        100%;
+	height:       11%;
+    z-index:      90;
+	padding:      0px 0px 0px;
+    position:     fixed;
+    min-height:   68px;	
+	box-shadow:	  0px 9px 18px -8px #000000;
+    font-weight:  bold;
+    background-color: #fdffff; /* white colour */
+}
+
+#logo {
+	z-index:     1;
+	margin-left: 7%;
+}
+/* HOME BUTTON */
+#home_btn {
+    top:          -2px;
+	left:          14px;
+	color:         #000000;
+    width:         10px;
+    z-index:       12;
+	padding:       0.8px;
+    position:      relative;
+	transition:    all 0.4s;
+	font-family:  'EB Garamond';
+}
+
+/* SEARCH BAR */
+#websearchField {    
+    float:               left;
+    color:               black;
+	width:               40%;
+	height:              20px;
+    border:              1px rgb(112, 173, 71) solid;	
+	display: 			 block;
+	padding:             13px 0px 8px 50px;
+	font-size:           18px;
+	margin-top:          -109px;
+	margin-left:         78%;
+	border-radius:       50px;
+    background-image:    url("../images/search.png");
+    background-repeat:   no-repeat;
+    background-size:     32px;
+    background-position: 12px 6px;
+    background-color:    white;
+	transition:          width 0.5s ease-in-out;
+   -webkit-transition:   width 0.5s ease-in-out;
+}
+#websearchField::placeholder {
+	color:         rgba(73, 89, 33, 100);
+	padding-right: 60px;
+	
+}
+#websearchField.expand {
+	display:                          block;  
+	animation-name:                   expandAnim;
+	animation-duration:               0.6s;
+	animation-fill-mode:              forwards;
+   -webkit-animation-name:            expandAnim;    /* Safari 4.0 - 8.0 */
+   -webkit-animation-duration:        0.6s;          /* Safari 4.0 - 8.0 */
+   -webkit-animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+}
+#websearchField.expand:after {
+	width: 200%;
+}
+#websearchField:focus {
+	outline: none;
+}
+
+@keyframes expandAnim{
+	from 0% {
+		width: 16%;
+	} to {
+		width: 62%;
+	}
+}
+@-webkit-keyframes expandAnim{
+	from 0% {
+		width: 16%;
+	} to {
+		width: 62%;
+	}
+}
+
+/* SEARCH WINDOW */
+.searchWindow {
+    top:              70px;
+    left:             0;
+    width:            100%;
+	height:           0%;
+	z-index:          90;
+    position:         fixed;
+	overflow:         hidden;
+	transition:       0.5s;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.searchContent {
+    top:          0%;
+    width:        100%;
+    position:     auto;
+	min-height:   100%;
+    text-align:   center;
+    margin-top:   30px;
+	margin-left: -80%;
+}
+
+/* DISPLAY RESULT WINDOW */
+#searchList {
+	color:            black;
+	padding: 	 	  27px 12px;
+	font-size:   	  26px;	
+	margin-top:  	 -10px;
+	text-align:  	  left; 	
+	font-family: 	 'Nunito';
+	list-style-type:  none;
+}
+
+#searchList hr {
+	width:        80%;
+	font-size:    32px;	
+	text-align:   left; 
+	margin-left: -2px;
+	font-family: 'Nunito';
+}
+
+#searchList li:hover {	
+	transition:       all 0.4s;
+	background-color: rgba(242, 131, 75, 0.42);
+}
+
+.searchListContent {
+	color:     #aaaa00;
+	font-size: 20px;
+}
+
+#noResult {
+	display:   	 none;
+	font-size: 	 32px;	
+	text-align:  center;
+	font-family: 'Nunito';
+}
+
+/* CLOSE BUTTON */
+#closeSearch {
+    top:              10px;
+    right:            280px;
+    color:            gray;
+    border:           none;  
+    z-index:          90;
+    display:          block;
+    padding:          11px 29px 11px 34.8px;
+    position:         absolute;
+    font-size:        40px;
+    transition:       0.4s;
+    text-decoration:  none;
+	background-color: transparent;
+}
+
+#closeSearch:hover {
+    color: red;
+}
+
+/*_________________________________________________________*/
+/* NAVIGATION BAR */
+.nav {
+	top:      -68px;
+	left:      380px;
+	z-index:   2;
+    display:   inline-block;\
+	width:     100%;
+	position:  relative;
+	background-color: transparent;
+}
+
+.nav span {
+	font-size:   21px;
+	font-family: Helvetica Neue;
+}
+
+.navbtn {
+	color:            black;
+    margin:           0;
+    border:           0 none;
+	z-index:          1;
+    outline:          none;
+    padding:          8px 10px 3px 10px;
+	font-size:        18px;
+	box-sizing:       border-box;	
+	line-height:      28px;
+	font-weight:      bold;
+	text-decoration:  none;
+	background-color: transparent;
+}
+
+.navbtn.red {
+	color: black; /* dark red */
+}
+
+.navbtn.orange {
+	color: orange;
+}
+
+.navbtn.green {
+	color: rgb(73, 89 ,33); /* green */
+}
+
+.navbtn:before {
+	width:          84%;
+	height:         4px; 
+	               
+	left:           9%;	/* horizontal coordinate of underline */
+	bottom:        -2px;   /* distance between underline and the word */
+	content:        "";
+	               
+	position:       absolute;
+	transform:      scaleX(0);
+	background:     auto;
+	transition:    .10s linear;
+	visibility:     hidden;
+	text-align:     center;
+	border-radius:  0px;
+}
+
+.navbtn.red:before {
+	background: #be3448; /* dark red */
+}
+
+.navbtn.orange:before {
+	background: orange;
+}
+
+.navbtn.green:before {
+	background: rgb(135, 175 ,69); /* green */
+}
+
+
+.navbtn:hover:before, .navbtn:focus:before {
+	transform:  scaleX(1);
+	visibility: visible;
+}
+
+.navBtn.hovered {
+	transform: scaleX(0.25);
+    height: 6.8rem;
+}
+
+@keyframes hover-v {
+  0% {
+      transform: scaleX(0);
+      height: 6px;
+     }
+  45% {   
+      transform: scaleX(0.05);
+      height: 6px;
+     }
+  55% {height: 6px;}
+  100% {
+      transform: scaleX(0.25);
+      height: 6.8rem;
+     }
+}
+@keyframes no-hover-v {
+  0% {
+      transform: scaleX(0.05);
+      height: 6.8rem;
+     }
+  45% {height: 6px;}
+  55% {   
+      transform: scaleX(0.25);
+      height: 6px;
+      opacity: 1;
+     }
+  
+  100% {
+      transform: scaleX(0);
+      height: 6px;
+      opacity: .02;
+     }
+}
+
+/* TOOLBAR LEFT: USER PROFILE BUTTON */
+#userDropbtn {
+	float:            right;
+	color:            black;
+	width:            80px;
+	height:           100%;
+    margin:           0;
+	border:           none;
+	z-index:          99;
+    padding:          3px 10px 8px 10px;
+	position:         relative;
+	font-size:        12px;
+	box-sizing:       border-box;	
+	margin-top:      -123px;
+	line-height:      20px;
+	font-family:      微軟正黑體;
+	font-weight:      bold;
+	margin-right:     30px;
+	text-decoration:  none;
+	background-color: white;
+}
+
+#userDropbtn:hover, 
+#userDropbtn:focus {	
+	outline:          none;
+	transition:       all 0.4s;
+}
+
+#userDropContent {
+	top:              60px;
+	left:             84%;
+	width:            190px;
+	z-index:          99;
+	display:          none;
+	opacity:          0;
+    position:         absolute;
+	font-size:        23px;
+	transform:        translateY(-2%);
+    box-shadow:       0px 8px 16px 0px rgba(0,0,0,0.2);
+    visibility:       invisible; /* hides sub-menu */
+    transition:       all 0.3s;
+	font-family:     'Nunito';
+	background-color: #fff;
+}
+
+#userDropbtn:hover ~ #userDropContent {
+    opacity:          1;
+	display:          block;
+    transform:        translateY(6%);    
+}
+#userDropContent:hover {
+	top:     60px;
+	display: block;
+	opacity: 1;
+}
+
+#userDropContent a {
+    color:           black;    
+	display:         block;
+	padding:         12px 16px;
+	font-size:       14px;
+	border-bottom:   1px #bbb solid;
+    text-decoration: none;
+}
+
+#userDropContent a:nth-child(2) {
+	color: orange;
+}
+#userDropContent a:hover {
+	color: white;
+	background-color: orange;
+}
+
+/*_________________________________________________________*/
+.bigBanner {
+    top:        0px;
+	left:       0px;
+	width:      98.3%;
+    height:     370px;
+	z-index:    2;
+	padding:    0;
+    position:   absolute;
+    overflow:   hidden;
+	max-width:  102%;
+}
+
+/* BACKGROUND OF BANNER */
+.fixBg {
+    width:             100%; 
+	opacity:           1;
+	min-height:        100%;
+	background-size:   100% 340px;
+    background-repeat: no-repeat;
+    background-image:  url('../images/woodBg.png'); 
+}
+
+/* TITLE "WITCHY CANDY" IN THE BANNER */
+#mainPageTitle, #mainPageSideText {
+	top:         	 17%;
+	left:        	 40%;
+	z-index:     	 4;
+	font-size:   	 68px;
+}
+#mainPageTitle {
+	margin-left: 	-400px; 
+	margin-top:  	-29px;
+	letter-spacing: -2px;
+}
+
+/* PAGE TITLE IN THE BANNER */
+.title {
+	top:          	   30%;
+	left:         	   0%;
+    color:        	   white;	 
+	width:        	   70%;
+    height:       	   20%;
+    z-index:      	   2;
+    padding:      	   8px 12px;
+    position:     	   absolute;
+	font-size:    	   28px;
+    text-align:   	   center;
+    font-family:  	  'Nunito';
+    font-weight:  	   bold;
+    background-color:  transparent;
+}
+
+/* WITCH IMAGE IN THE BANNER */
+.img_witch img {
+	top:              -8px;
+	left:              18%;
+	bottom:            0px;           
+	width:             20%;
+	height:	           80%;           
+	z-index:           3;
+	padding:           8px 12px;
+	opacity:           1;
+    position:          absolute;
+    overflow:          hidden;
+    text-align:        left;
+    min-height:        120px;
+	margin-top:        78px;   
+}
+#mainPageImgWitch img {
+	left:             1.4%;
+	padding:          8px 12px;
+    opacity:          0.6;	
+}
+
+/* "HEALTHIEST OF CANDIES" BANNER */
+.banner {         
+    left:              56%;
+	float:             center;
+	color:             white;
+	border:            2px white solid;
+	z-index:           20;
+    padding:           14px 160px;
+    position:          absolute;
+	max-width:         530px;
+    transition:        0.4s;
+    margin-top:        230px;
+    max-height:        46px;
+	font-family:      'Nunito';
+    text-decoration:   none;
+    background-color:  transparent;
+}
+
+/*_________________________________________________________*/
+.jumbotron {
+	top:      80px;
+	position: relative;
+}
+
+.mid {
+	width:            100%;
+	bottom:           0; 
+	padding:          90px;
+	margin-top:       2%; 
+	overflow-y:       hidden; 
+	overflow-x:       hidden;
+	margin-left:      18%;
+}
+
+.bg_content {
+	display:          -webkit-box;
+    display:          -moz-box;
+    display:          -ms-flexbox;
+    display:          -webkit-flex;
+    display:           flex;
+	flex-flow:         row;
+	flex-basis: 	   auto;
+	justify-content:   flex-start;
+	-webkit-flex-flow: row;
+}
+
+/*_________________________________________________________*/
+/* CopyRight */
+footer {
+	color:       white; 
+	margin:      69px 34% 0 34%;
+	font-size:   16px;
+	text-align:  center; 
+	font-family: Calibri;
+	white-space: nowrap; 
+}
+/*_________________________________________________________*/
+/* BACK TO TOP BUTTON */
+#BackToTopBtn {
+	color:            gold;
+	right:            30px;
+	bottom:           20px;
+	border:           none;
+	cursor:           pointer;
+	outline:          none;
+	padding:          15px;
+	z-index:          99;
+	opacity:          0;
+	position:         fixed;
+	font-size:        18px;
+	transition:       all 0.4s;
+	border-radius:    9%;
+	background-color: green; /* Dark red */
+}
+
+#BackToTopBtn.scrolled:hover {
+	opacity: 1;
+}
+
+#BackToTopBtn.scrolled {
+	opacity:    0.8;
+	transition: all 0.4s;
+}
+/*_________________________________________________________*/
+/* LOGIN PAGE */
+#welcomeText {
+	height: 230px;
+}
+
+#form-login {
+	width:      100%;
+	height:     100%;
+	z-index:    99;
+	margin-top: 30%;
+	transition: all 0.4s;
+}
+
+#form-login input {
+	border:        solid 2px #bbb;
+	height:        13%;
+	padding:       3px 10px 3px 10px;
+	font-size:     16px;
+	margin-left:   1%;
+	border-radius: 1px;
+
+}
+
+#form-login button {
+	border:           none;
+	height:           12%;
+	font-size:        20px;
+	font-family:      Calibri;
+	font-weight:      bold;
+	margin-left:      1%;
+	border-radius:    1px;
+	background-color: rgb(30, 101, 109); 
+}
+
+#form-login label, a {
+	color:        white;
+	font-size:    21px;
+	font-weight:  normal;
+	font-family: 'Helvetica Neue';
+}
+
+input[type=checkbos] {
+  vertical-align: middle;
+}
+
+input[type=checkbos] label {
+	display: inline-block;
+	padding-right: 10px;
+	white-space: nowrap;
+}
+
+
+

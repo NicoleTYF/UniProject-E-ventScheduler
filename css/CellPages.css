@@ -1,0 +1,328 @@
+﻿
+.bigBanner {
+	left:  -72px;
+	width:  170%;
+}
+
+.navbar {
+    width:        96.97%;
+    margin-left: -2px;
+}
+
+.navbar li {
+	left: 20px;
+}
+
+/* PAGE CONTENT */
+.mid {
+	width:            1100px; 
+	margin:           0 auto;  	
+	bottom:           0; 
+	margin-top:       400%;
+	min-height:       0px; 
+	overflow-y:       auto; 
+	margin-top:       0%; 
+	overflow-x:       hidden; 	
+	background-color: #f0f0f0; /* gray */
+}
+
+/* _______________________________________________________________________________________ */
+/* CELL IMAGE ON THE LEFT */
+.itemImg {
+    height:    100%;
+    max-width: 40%;
+}
+
+/* CELL TEXT ON THE RIGHT */
+.itemText {
+    width:       50%;
+	position:    relative;	
+	font-size:   27px;
+	margin-top:  -200px;    
+    text-align:  center;
+    margin-left: 38%;
+	font-family: 'Open Sans Condensed', serif;
+}
+
+.likeBtn {
+	width:            100%;
+	height:           102%;
+	border:           none;
+	margin-top:       -1.6px;
+	transition:       all 0.2s;
+	text-decoration:  none;
+	background-image: url("../images/cellSideBar/fav_empty.png");
+}
+
+.likeBtn:hover {
+	background-image: url("../images/cellSideBar/fav_hover.png");
+}
+
+.likeBtn.liked {
+	background-image: url("../images/cellSideBar/fav_faved.png");
+}
+
+.readMore {
+	color:           #eb1d2a;
+	right:           24px;
+	bottom:          -60%; 
+	padding:         2px;
+	position:        absolute;	
+	font-size:       20px;
+	transition:      all 0.4s;
+	text-align:      right;
+	text-decoration: underline;
+}
+
+#hiddenRB {
+	top:        130px;
+	height:     28px;
+	margin-top: 0px;
+}
+
+.readMore:hover, .readMore:visited {
+	color:            white;
+	background-color: rgba(235, 49, 62, 80);
+}
+
+.itemName {
+	font-size:    30px;
+    font-family: 'Helvetica Neue';
+	line-height: 0.3;
+}
+
+.itemSideBar {
+    float:            right;
+	width:            7%;
+	height:           100%;
+    margin-top:       0%;
+	transition:       0.4s;
+	margin-right:     0%;
+	background-color: transparent;
+}
+
+/* ____________________________________________________________________ */
+/* POPUP BOX */
+.popUpBox {
+	top:              0;	
+	left:             0;		
+	width:            100%; 
+	height:           100%; 
+	z-index:          99; 
+	display:          none; 	
+	overflow:         hidden; 
+	position:         fixed; 
+	padding-top:      100px; 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.4);
+}
+
+/* The Close Button */
+.closeBtn {
+	color: white;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	margin-right: 170px;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Add Animation */
+@-webkit-keyframes dropFromTop {
+	from {
+		top:-300px; 
+		opacity:0
+	} to {
+		top:0; 
+		opacity:1
+	}
+}
+
+@keyframes dropFromTop {
+	from {
+		top:-300px; 
+		opacity:0
+	} to {
+		top:0; 
+		opacity:1
+	}
+}
+
+.popUpImg {
+	order:       1;
+	width:       340px;
+	z-index:     -1;
+	min-height:  400px;
+}
+
+.popUpBox section {
+	width:                      70%;
+	height:                     400px;
+	margin:                     auto;
+	border:                     1px solid #888;
+	padding:                    0;
+	position:                   relative;	
+	overflow:                   hidden;
+	box-shadow:                 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	transition:                 all 0.4s;
+	font-family:                "Helvetica Neue";
+	border-radius:              20px;	
+	animation-name:             dropFromTop;
+	animation-duration:         0.4s;
+	background-color:           #fefefe;
+	-webkit-animation-name:     dropFromTop;
+	-webkit-animation-duration: 0.4s;
+}
+
+.popUpBox article {
+	order:             2;
+	display:          -webkit-box;
+    display:          -moz-box;
+    display:          -ms-flexbox;
+    display:          -webkit-flex;
+    display:           flex;
+	overflow:          hidden;
+	flex-flow:         row;
+	flex-basis: 	   auto;
+	transition:        all 0.4s;
+	justify-content:   flex-start;
+   -webkit-flex-flow:  row;	
+}
+
+.popUpContent {
+	order:             2;
+	display:          -webkit-box;
+    display:          -moz-box;
+    display:          -ms-flexbox;
+    display:          -webkit-flex;
+    display:           flex;
+	overflow:          hidden;
+	flex-flow:         column;
+	flex-basis: 	   auto;
+	justify-content:   flex-start;
+	-webkit-flex-flow: column;	
+}
+
+.popUpBox header {
+	order:            1;
+	color:            white;
+	width:            90%;
+	height:           60px;  
+	padding:          2px 120px;
+	text-align:       center;
+	background-color: #85020a;
+}
+
+.popUpText {
+	order:       2;
+	padding:     0px 10px;
+	flex-grow:   20;
+	overflow-x:  hidden;
+	overflow-y:  auto;
+	max-height:  300px;
+	flex-shrink: 0;
+}
+
+.popUpBox h4 {	
+	color:     #C60000;
+	height:    0px;
+	padding:   10px;
+	font-size: 16px;
+	
+}
+
+.popUpBox li {
+	left:      120px;
+	color:     black;
+	padding:   0px 30px;
+	font-size: 16px;
+}
+
+.cell {
+	height:	290px;
+}
+
+.popUpBox {
+	top:              0;	
+	left:             0;		
+	width:            100%; 
+	height:           100%; 
+	z-index:          99; 
+	display:          none; 	
+	overflow:         hidden; 
+	position:         fixed; 
+	padding-top:      0px; 
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.4);
+}
+
+.popUpFlexBox {
+	height:      500px;
+	margin-top: -50px;
+}
+
+.popUpImg {
+	width:       100%;
+	height:		 140px;
+	z-index:    -1;
+	min-width:   100%;	
+	min-height:  0px;
+	max-height:  40%;
+}
+
+.cell article {
+	flex-flow:        column;
+   -webkit-flex-flow: column;	
+	
+}
+
+.popUpContent {
+	order:             2;
+	margin-top:       -203px;	
+	flex-flow:         column;
+	-webkit-flex-flow: column;	
+}
+
+.cell h3 {
+	order:        3;
+	height:       40px;  
+	padding:      2px 0px;
+	font-size:    30px;
+	text-align:   center;
+	margin-top:   10px;
+	margin-left: -90px;
+}
+
+.popUpText {
+	height:     270px;
+	padding:    0px 40px;
+	overflow-y: auto;
+}
+
+.closeBtn {
+	color:        black;
+	font-size:    40px;
+	margin-top:  -130px;
+	margin-right: 40px;
+}
+
+/*_____________________________________________________________________*/
+#searchField {
+	margin-top: 630px;
+}
+
+
+
+
+
+
+
+
+
+
