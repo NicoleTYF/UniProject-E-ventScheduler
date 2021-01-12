@@ -1,5 +1,7 @@
 # UniProject-E-ventScheduler
 
+&emsp; 🧰 **Tool Stack:**   <br>
+&emsp;&emsp;&emsp;HTML5, CSS3, JS, jQuery (frontend) | PHP (CodeIgniter), Apache (backend)
 
 ### 🔨 Feature Overview
 <table>
